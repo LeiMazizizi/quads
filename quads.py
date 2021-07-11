@@ -786,7 +786,7 @@ class QuadTree(object):
         """
         return iter(self._root)
 
-    def insert(self, point, data=None):
+    def insert(self, point):
         """
         Inserts a `Point` into the quadtree.
 
@@ -799,7 +799,7 @@ class QuadTree(object):
             bool: `True` if insertion succeeded, otherwise `False`.
         """
         pnt = self.convert_to_point(point)
-        pnt.data = data
+        
         return self._root.insert(pnt)
 
     def find(self, point):
